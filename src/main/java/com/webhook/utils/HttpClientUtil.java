@@ -22,10 +22,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @SuppressWarnings("all")
 public class HttpClientUtil {
@@ -207,7 +204,7 @@ public class HttpClientUtil {
     private static HttpRequestBase addHeaders(HttpRequestBase httpRequest, Map<String, String> headers) {
         // 设置请求头信息，鉴权
 //        httpRequest.setHeader("Authorization", "Bearer da3efcbf-0845-4fe3-8aba-ee040be542c0");
-        httpRequest.addHeader("Authorization", "1231321321313132132");
+        httpRequest.addHeader("Authorization", "application/json");
         for (Map.Entry<String, String> entry : headers.entrySet()) {
             httpRequest.addHeader(entry.getKey(), entry.getValue());
         }
