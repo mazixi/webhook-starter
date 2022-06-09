@@ -1,6 +1,7 @@
 package com.webhook;
 
 import com.webhook.config.MessageSenderProperties;
+import com.webhook.enums.ErrorMessageEnum;
 import com.webhook.service.MessageService;
 import com.webhook.service.MessageServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class MessageSenderAutoConfiguration {
         MessageSenderProperties properties = getProperties();
         if (ObjectUtils.isEmpty(properties.getWebHookList())) {
             log.error("加载webhook—api默认配置失败");
-            throw new RuntimeException("webhook—api没有默认配置");
+            throw new RuntimeException(ErrorMessageEnum.NO_DEFAULT_CONFIGURATION.getMsg());
         }
         log.info("已成功加载[{}]个webhook—api默认配置", properties.getWebHookList().size());
         return new MessageServiceImpl(properties);

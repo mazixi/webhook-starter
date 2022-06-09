@@ -23,7 +23,7 @@
 ```yml
 spring:
   message:
-    wechat-webhooks: 
+    webHookList: 
     	- https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx
     	- https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx
 

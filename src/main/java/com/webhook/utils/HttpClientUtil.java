@@ -184,7 +184,6 @@ public class HttpClientUtil {
             // 创建Http Post请求
             HttpPost httpPost = new HttpPost(url);
             // 添加header
-
             httpPost = (HttpPost) addHeaders(httpPost, headers);
             // 创建请求内容
             StringEntity entity = new StringEntity(json, ContentType.APPLICATION_JSON);
@@ -198,7 +197,6 @@ public class HttpClientUtil {
             try {
                 response.close();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

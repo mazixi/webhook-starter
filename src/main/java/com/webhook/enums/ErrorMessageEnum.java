@@ -16,6 +16,7 @@ import lombok.Getter;
 public enum ErrorMessageEnum {
 
     NO_GET_WEB_HOOK_LOCATION("没有获取到webhook配置!"),
+    NO_DEFAULT_CONFIGURATION("webhook—api没有默认配置!"),
     ADDRESS_IS_NULL( "webhook地址为空!");
 
 
