@@ -1,7 +1,8 @@
-package com.sayalala.wework.wehook.entity;
+package com.webhook.entity;
 
 
 import com.sayalala.wework.wehook.utils.*;
+import com.webhook.utils.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

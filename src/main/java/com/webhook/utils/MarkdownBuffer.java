@@ -1,4 +1,4 @@
-package com.sayalala.wework.wehook.utils;
+package com.webhook.utils;
 
 public class MarkdownBuffer {
 

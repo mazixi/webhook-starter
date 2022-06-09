@@ -1,4 +1,4 @@
-package com.sayalala.wework.wehook.utils;
+package com.webhook.utils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.auth.AuthScope;

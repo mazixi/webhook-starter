@@ -1,9 +1,9 @@
-package com.sayalala.wework.wehook.service;
+package com.webhook.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sayalala.wework.wehook.config.MessagesenderProperties;
-import com.sayalala.wework.wehook.entity.WeWorkWebhookMessage;
-import com.sayalala.wework.wehook.utils.HttpClientUtil;
+import com.webhook.config.MessagesenderProperties;
+import com.webhook.entity.WeWorkWebhookMessage;
+import com.webhook.utils.HttpClientUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 

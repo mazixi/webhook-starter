@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.sayalala.wework.wehook.MessageSenderAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.webhook.MessageSenderAutoConfiguration

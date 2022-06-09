@@ -1,4 +1,4 @@
-package com.sayalala.wework.wehook.entity;
+package com.webhook.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

@@ -1,6 +1,6 @@
-package com.sayalala.wework.wehook.service;
+package com.webhook.service;
 
-import com.sayalala.wework.wehook.entity.WeWorkWebhookMessage;
+import com.webhook.entity.WeWorkWebhookMessage;
 
 public interface MessageService {
 

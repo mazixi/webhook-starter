@@ -1,4 +1,4 @@
-package com.sayalala.wework.wehook.utils;
+package com.webhook.utils;
 
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base32;

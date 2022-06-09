@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.swalikh</groupId>
+    <groupId>com.webhook</groupId>
     <artifactId>webhook-starter</artifactId>
     <version>1.0.0</version>
 

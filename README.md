@@ -1,4 +1,4 @@
-### wework webhook robot
+### webhook robot
 `a java SDK for wework webhook robot `
 ### 介绍(introduction)
 一个企业微信webhook机器人javaSDK，配置好webhook地址之后就可以快速方便发送消息，摒弃了各种参数的拼接，用面向对象的方式来优雅的发送提醒
@@ -14,7 +14,7 @@
 ```maven
         <dependency>
             <groupId>io.github.swalikh</groupId>
-            <artifactId>wework-wehook-starter</artifactId>
+            <artifactId>webhook-starter</artifactId>
             <version>1.0.0</version>
         </dependency>
 ```

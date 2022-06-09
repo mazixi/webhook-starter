@@ -1,12 +1,11 @@
-package com.sayalala.wework.wehook;
+package com.webhook;
 
-import com.sayalala.wework.wehook.config.MessagesenderProperties;
-import com.sayalala.wework.wehook.service.MessageService;
-import com.sayalala.wework.wehook.service.MessageServiceImpl;
+import com.webhook.config.MessagesenderProperties;
+import com.webhook.service.MessageService;
+import com.webhook.service.MessageServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.SearchStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
