@@ -15,15 +15,15 @@ import java.util.List;
  */
 @Data
 @Accessors(chain = true)
-public class WeWorkWebhookMessage {
+public class WebHookMessage {
 
-    private String webhook;
+    private String webHook;
 
-    private String msgtype;
+    private String msgType;
 
     private Text text;
 
-    private Markdown markdown;
+    private Markdown markDown;
 
     private Image image;
 
@@ -34,7 +34,7 @@ public class WeWorkWebhookMessage {
     @Accessors(chain = true)
     public static class Text {
         private String content;
-        private List<String> mentioned_list;
+        private List<String> mentionedList;
     }
 
     @Data
@@ -62,12 +62,12 @@ public class WeWorkWebhookMessage {
     *  @type   发送网络图片或者本地图片都可以
     *  @desc
     */
-    public static WeWorkWebhookMessage buildImageMessage(String imagePath) {
+    public static WebHookMessage buildImageMessage(String imagePath) {
         File file;
         try {
-            WeWorkWebhookMessage message = new WeWorkWebhookMessage();
-            message.setMsgtype("image");
-            WeWorkWebhookMessage.Image image = new WeWorkWebhookMessage.Image();
+            WebHookMessage message = new WebHookMessage();
+            message.setMsgType("image");
+            WebHookMessage.Image image = new WebHookMessage.Image();
             if (imagePath.startsWith("http")) {
                 file = Fileutils.downloadFile(imagePath, "image", IDUtils.genRandom("image-", 15));
                 image.setBase64(ImageToBase64.ImageToBase64(file));
@@ -93,12 +93,12 @@ public class WeWorkWebhookMessage {
     *  @type   构建markdown消息
     *  @desc
     */
-    public static WeWorkWebhookMessage buildMarkDownMessage(MarkdownBuffer content) {
-        WeWorkWebhookMessage message = new WeWorkWebhookMessage();
-        message.setMsgtype("markdown");
-        WeWorkWebhookMessage.Markdown markdown = new WeWorkWebhookMessage.Markdown();
+    public static WebHookMessage buildMarkDownMessage(MarkdownBuffer content) {
+        WebHookMessage message = new WebHookMessage();
+        message.setMsgType("markdown");
+        WebHookMessage.Markdown markdown = new WebHookMessage.Markdown();
         markdown.setContent(content.toString());
-        message.setMarkdown(markdown);
+        message.setMarkDown(markdown);
         return message;
     }
 
@@ -108,10 +108,10 @@ public class WeWorkWebhookMessage {
     *  @type   批量构建图文卡片链接消息
     *  @desc
     */
-    public static WeWorkWebhookMessage buildNewsMessage(List<Article> articles) {
-        WeWorkWebhookMessage message = new WeWorkWebhookMessage();
-        message.setMsgtype("news");
-        WeWorkWebhookMessage.News news = new WeWorkWebhookMessage.News();
+    public static WebHookMessage buildNewsMessage(List<Article> articles) {
+        WebHookMessage message = new WebHookMessage();
+        message.setMsgType("news");
+        WebHookMessage.News news = new WebHookMessage.News();
         news.setArticles(articles);
         message.setNews(news);
         return message;
@@ -122,10 +122,10 @@ public class WeWorkWebhookMessage {
      *  @type   构建图文卡片链接消息
      *  @desc
      */
-    public static WeWorkWebhookMessage buildNewsMessage(Article article) {
-        WeWorkWebhookMessage message = new WeWorkWebhookMessage();
-        message.setMsgtype("news");
-        WeWorkWebhookMessage.News news = new WeWorkWebhookMessage.News();
+    public static WebHookMessage buildNewsMessage(Article article) {
+        WebHookMessage message = new WebHookMessage();
+        message.setMsgType("news");
+        WebHookMessage.News news = new WebHookMessage.News();
         List<Article> list = new ArrayList();
         list.add(article);
         news.setArticles(list);
@@ -139,7 +139,7 @@ public class WeWorkWebhookMessage {
     *  @type   构建普通文本消息
     *  @desc
     */
-    public static WeWorkWebhookMessage buildText(String content) {
+    public static WebHookMessage buildText(String content) {
         return buildText(content, false);
     }
 
@@ -148,18 +148,18 @@ public class WeWorkWebhookMessage {
      *  @type   构建普通文本消息（@ALL 指定webhookapi)
      *  @desc
      */
-    public static WeWorkWebhookMessage buildText(String content, boolean atAll) {
-        WeWorkWebhookMessage message = new WeWorkWebhookMessage();
-        message.setMsgtype("text");
-        WeWorkWebhookMessage.Text text = new WeWorkWebhookMessage.Text();
+    public static WebHookMessage buildText(String content, boolean atAll) {
+        WebHookMessage message = new WebHookMessage();
+        message.setMsgType("text");
+        WebHookMessage.Text text = new WebHookMessage.Text();
         text.setContent(content);
-        List<String> mentioned_list = text.getMentioned_list();
+        List<String> mentionedList = text.getMentionedList();
         if (atAll) {
-            if (mentioned_list == null) {
-                mentioned_list = new ArrayList<>();
+            if (mentionedList == null) {
+                mentionedList = new ArrayList<>();
             }
-            mentioned_list.add("@all");
-            text.setMentioned_list(mentioned_list);
+            mentionedList.add("@all");
+            text.setMentionedList(mentionedList);
         }
         message.setText(text);
         return message;

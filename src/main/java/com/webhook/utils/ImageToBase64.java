@@ -6,6 +6,9 @@ import java.net.URL;
 import java.util.Base64;
 import java.util.Objects;
 
+/**
+ * @author mazixi
+ */
 public class ImageToBase64 {
 
     private static String strNetImageToBase64;

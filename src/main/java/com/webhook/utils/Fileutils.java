@@ -17,8 +17,11 @@ import java.util.logging.Logger;
  * Java原生的API可用于发送HTTP请求，即java.net.URL、java.net.URLConnection，这些API很好用、很常用，
  * 但不够简便；
  * <p>
- * 1.通过统一资源定位器（java.net.URL）获取连接器（java.net.URLConnection） 2.设置请求的参数 3.发送请求
- * 4.以输入流的形式获取返回内容 5.关闭输入流
+ * 1.通过统一资源定位器（java.net.URL）获取连接器（java.net.URLConnection）
+ * 2.设置请求的参数
+ * 3.发送请求
+ * 4.以输入流的形式获取返回内容
+ * 5.关闭输入流
  */
 public class Fileutils {
 

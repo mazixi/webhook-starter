@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @Component
 @ConfigurationProperties(prefix = "spring.message")
-public class MessagesenderProperties {
+public class MessageSenderProperties {
 
     /**
      * message开关

@@ -36,16 +36,16 @@ spring:
 
 - 1.发送普通文本消息
 ```java
-        WeWorkWebhookMessage weWorkWebhookMessage = WeWorkWebhookMessage.buildText("hello");
-        messageService.send(weWorkWebhookMessage);
+        WebHookMessage webHookMessage = WebHookMessage.buildText("hello");
+        messageService.send(webHookMessage);
 ```
 - 2.发送图片消息
 ```java
         // networkImage 和 localImage 均可，格式可支持jpg&png
         String networkImageUrl = "http://www.image.com/dog.jpg";
         String localImageFilePath = "/home/image/cat.png";
-        WeWorkWebhookMessage imageMessage = 
-                WeWorkWebhookMessage.buildImageMessage(networkImageUrl);
+        WebHookMessage imageMessage = 
+                WebHookMessage.buildImageMessage(networkImageUrl);
         messageService.send(imageMessage);
 ```
 - 3.发送图文卡片消息
@@ -55,10 +55,10 @@ spring:
         Article article = new Article()
                 .setTitle("这是卡片的标题")
                 .setUrl("http://www.google.com/这是点击的链接地址")
-                .setPicurl(networkImageUrl)
+                .setPicUrl(networkImageUrl)
                 .setDescription("这是秒速文字");
-        WeWorkWebhookMessage articleMessage =
-                WeWorkWebhookMessage.buildNewsMessage(article);
+        WebHookMessage articleMessage =
+                WebHookMessage.buildNewsMessage(article);
         messageService.send(articleMessage);
 ```
 - 4.发送markdown消息
@@ -74,7 +74,7 @@ spring:
                 .code("single line code").nextLine()
                 .link("link title","line URL").nextLine();
 
-        WeWorkWebhookMessage markDownMessage =
-                WeWorkWebhookMessage.buildMarkDownMessage(markdownBuffer);
+        WebHookMessage markDownMessage =
+                WebHookMessage.buildMarkDownMessage(markdownBuffer);
         messageService.send(markDownMessage);
 ```

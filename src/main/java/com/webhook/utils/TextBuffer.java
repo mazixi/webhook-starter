@@ -1,5 +1,8 @@
 package com.webhook.utils;
 
+/**
+ * @author mazixi
+ */
 public class TextBuffer {
 
     private static final String NEXT_LINE = "\n";
