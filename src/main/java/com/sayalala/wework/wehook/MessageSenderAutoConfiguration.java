@@ -14,6 +14,9 @@ import org.springframework.core.Ordered;
 import org.springframework.util.ObjectUtils;
 
 
+/**
+ * @author mazixi
+ */
 @Slf4j
 @Configuration
 @AutoConfigureOrder(value = Ordered.HIGHEST_PRECEDENCE)
