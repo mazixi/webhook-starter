@@ -7,7 +7,7 @@ import java.util.Base64;
 import java.util.Objects;
 
 /**
- * @author mazixi
+ * @author mzx
  */
 public class ImageToBase64 {
 

@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 /**
- * @author mazixi
+ * @author mzx
  * @since 2022-06-09 19:58
  */
 @Data

@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 
 /**
- * @author mazixi
+ * @author mzx
  */
 public class MD5Utils {
     /**

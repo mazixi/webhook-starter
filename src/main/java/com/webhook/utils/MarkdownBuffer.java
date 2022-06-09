@@ -1,7 +1,7 @@
 package com.webhook.utils;
 
 /**
- * @author mazixi
+ * @author mzx
  */
 public class MarkdownBuffer {
 

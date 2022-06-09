@@ -3,7 +3,7 @@ package com.webhook.service;
 import com.webhook.entity.WebHookMessage;
 
 /**
- * @author mazixi
+ * @author mzx
  * @since 2022-06-09 19:58
  */
 public interface MessageService {
