@@ -2,6 +2,7 @@ package com.webhook.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @since 2019-11-13 15:58
  */
 @Data
+@Component
 @ConfigurationProperties(prefix = "spring.message")
 public class MessagesenderProperties {
 
@@ -22,7 +24,7 @@ public class MessagesenderProperties {
     /**
      * wechet-webhookList
      */
-    private List<String> wechat_webhooks;
+    private List<String> webHookList;
 
 
 }

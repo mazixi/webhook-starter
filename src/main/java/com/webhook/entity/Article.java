@@ -3,6 +3,10 @@ package com.webhook.entity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+/**
+ * @author mazixi
+ *
+ */
 @Data
 @Accessors(chain = true)
 public class Article {

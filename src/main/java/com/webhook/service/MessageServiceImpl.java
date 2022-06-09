@@ -11,22 +11,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author mzx
+ */
 @Slf4j
 public class MessageServiceImpl implements MessageService {
 
-    private List<String> wechat_webhooks;
+    private List<String> webHookList;
 
 
     public MessageServiceImpl(MessagesenderProperties messagesenderProperties) {
-        this.wechat_webhooks = messagesenderProperties.getWechat_webhooks();
-        if (wechat_webhooks == null || wechat_webhooks.size() == 0) {
-            throw new RuntimeException("没有wechatwebhook配置");
+        this.webHookList = messagesenderProperties.getWebHookList();
+        if (webHookList == null || webHookList.size() == 0) {
+            throw new RuntimeException("没有获取到webhook配置");
         }
     }
 
     @Override
     public boolean send(WeWorkWebhookMessage weWorkWebhookMessage) {
-        return send(weWorkWebhookMessage, wechat_webhooks.get(0));
+        return send(weWorkWebhookMessage, webHookList.get(0));
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.webhook.entity;
 
 
-import com.sayalala.wework.wehook.utils.*;
 import com.webhook.utils.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -55,7 +54,7 @@ public class WeWorkWebhookMessage {
 
 
     /**
-    *  @author swalikh on 2021/9/16 10:42
+    *  @author mzx
     *  @type   发送网络图片或者本地图片都可以
     *  @desc
     */
@@ -86,7 +85,7 @@ public class WeWorkWebhookMessage {
 
 
     /**
-    *  @author swalikh on 2021/9/16 10:46
+    *  @author mzx on 2021/9/16 10:46
     *  @type   构建markdown消息
     *  @desc
     */
@@ -101,7 +100,7 @@ public class WeWorkWebhookMessage {
 
 
     /**
-    *  @author swalikh on 2021/9/16 10:46
+    *  @author mzx on 2021/9/16 10:46
     *  @type   批量构建图文卡片链接消息
     *  @desc
     */
@@ -115,7 +114,7 @@ public class WeWorkWebhookMessage {
     }
 
     /**
-     *  @author swalikh on 2021/9/16 10:46
+     *  @author mzx
      *  @type   构建图文卡片链接消息
      *  @desc
      */
@@ -132,7 +131,7 @@ public class WeWorkWebhookMessage {
 
 
     /**
-    *  @author swalikh on 2021/9/16 10:50
+    *  @author mzx
     *  @type   构建普通文本消息
     *  @desc
     */
@@ -141,7 +140,7 @@ public class WeWorkWebhookMessage {
     }
 
     /**
-     *  @author swalikh on 2021/9/16 10:50
+     *  @author mzx
      *  @type   构建普通文本消息（@ALL 指定webhookapi)
      *  @desc
      */

@@ -13,7 +13,7 @@
 #### 1.添加maven依赖(import maven dependency)
 ```maven
         <dependency>
-            <groupId>io.github.swalikh</groupId>
+            <groupId>com.webhook</groupId>
             <artifactId>webhook-starter</artifactId>
             <version>1.0.0</version>
         </dependency>
