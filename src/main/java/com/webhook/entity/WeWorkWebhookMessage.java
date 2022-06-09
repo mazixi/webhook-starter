@@ -9,6 +9,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author mazixi
+ * @since 2022-06-09 19:58
+ */
 @Data
 @Accessors(chain = true)
 public class WeWorkWebhookMessage {
