@@ -1,0 +1,5 @@
+#### 企业微信配置信息#################################
+spring:
+  message:
+    webHookList:
+      - https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=b4a30fc5-7963-42d3-87f4-9905c8e17584

@@ -13,7 +13,7 @@
 #### 1.添加maven依赖(import maven dependency)
 ```maven
         <dependency>
-            <groupId>com.webhook</groupId>
+            <groupId>com.webHook</groupId>
             <artifactId>webhook-starter</artifactId>
             <version>1.0.0</version>
         </dependency>

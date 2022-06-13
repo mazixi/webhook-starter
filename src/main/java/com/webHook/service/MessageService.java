@@ -1,6 +1,6 @@
-package com.webhook.service;
+package com.webHook.service;
 
-import com.webhook.entity.WebHookMessage;
+import com.webHook.entity.WebHookMessage;
 
 /**
  * @author mzx
@@ -10,19 +10,19 @@ public interface MessageService {
 
     /**
      * 发送企业微信消息--系统配置发送者
-     * @param webhookMessage 消息体
+     * @param webHookMessage 消息体
      * @return 发送消息
      */
-    boolean send(WebHookMessage webhookMessage);
+    boolean send(WebHookMessage webHookMessage);
 
     /**
      * 发送企业微信消息--自定义发送者
-     * @param webhookMessage
-     * @param webhook
+     * @param webHookMessage
+     * @param webHook
      * @return 发送消息
      *
      */
-    boolean send(WebHookMessage webhookMessage, String webhook);
+    boolean send(WebHookMessage webHookMessage, String webHook);
 
 
 }

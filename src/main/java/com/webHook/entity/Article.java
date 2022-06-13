@@ -1,4 +1,4 @@
-package com.webhook.entity;
+package com.webHook.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.webhook.MessageSenderAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.webHook.config.MessageSenderAutoConfiguration
