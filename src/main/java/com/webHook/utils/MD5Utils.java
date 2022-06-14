@@ -16,9 +16,10 @@ public class MD5Utils {
     /**
      * 默认的密码字符串组合，用来将字节转换成 16 进制表示的字符,apache校验下载的文件的正确性用的就是默认的这个组合
      */
-    protected static char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+    protected static char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     protected static MessageDigest messagedigest = null;
+
     static {
         try {
             messagedigest = MessageDigest.getInstance("MD5");
@@ -41,10 +42,8 @@ public class MD5Utils {
     /**
      * 判断字符串的md5校验码是否与一个已知的md5码相匹配
      *
-     * @param password
-     *            要校验的字符串
-     * @param md5PwdStr
-     *            已知的md5校验码
+     * @param password  要校验的字符串
+     * @param md5PwdStr 已知的md5校验码
      * @return
      */
     public static boolean checkPassword(String password, String md5PwdStr) {
@@ -76,7 +75,7 @@ public class MD5Utils {
      * 原因是当使用 FileChannel.map 方法时，MappedByteBuffer 已经在系统内占用了一个句柄， 而使用
      * FileChannel.close 方法是无法释放这个句柄的，且FileChannel有没有提供类似 unmap 的方法，
      * 因此会出现无法删除文件的情况。
-     *
+     * <p>
      * 不推荐使用
      *
      * @param file
@@ -111,9 +110,11 @@ public class MD5Utils {
     }
 
     private static void appendHexPair(byte bt, StringBuffer stringbuffer) {
-        char c0 = hexDigits[(bt & 0xf0) >> 4];// 取字节中高 4 位的数字转换, >>>
+        // 取字节中高 4 位的数字转换, >>>
+        char c0 = hexDigits[(bt & 0xf0) >> 4];
         // 为逻辑右移，将符号位一起右移,此处未发现两种符号有何不同
-        char c1 = hexDigits[bt & 0xf];// 取字节中低 4 位的数字转换
+        // 取字节中低 4 位的数字转换
+        char c1 = hexDigits[bt & 0xf];
         stringbuffer.append(c0);
         stringbuffer.append(c1);
     }
@@ -122,12 +123,12 @@ public class MD5Utils {
         long begin = System.currentTimeMillis();
 
         File file = new File("D:/BaiduNetdiskDownload/01_SpringBoot全套视频教程2018年3月份录制2.0.x版本/01-SpringBoot简介.avi");
-        if(!file.exists()){
+        if (!file.exists()) {
             System.out.println("不存在");
         }
         String md5 = getFileMD5String(file);
 
-          String md5_a = getMD5String("a");
+        String md5_a = getMD5String("a");
 
         long end = System.currentTimeMillis();
         System.out.println("md5:" + md5 + " time:" + ((end - begin) / 1000) + "s");
