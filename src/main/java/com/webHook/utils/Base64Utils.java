@@ -11,21 +11,19 @@ import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+/**
+ * @author mzx
+ */
 public class Base64Utils {
 
     public static Key DEFAULT_KEY = null;
 
     public static final String DEFAULT_SECRET_KEY1 = "?:P)(OL><KI*&UJMNHY^%TGBVFR$#EDCXSW@!QAZ";
-    public static final String DEFAULT_SECRET_KEY2 = "1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/";
-    public static final String DEFAULT_SECRET_KEY3 = "!QAZ@WSX#EDC$RFV%TGB^YHN&UJM*IK<(OL>)P:?";
-    public static final String DEFAULT_SECRET_KEY4 = "1qaz@WSX3edc$RFV5tgb^YHN7ujm*IK<9ol.)P:?";
-    public static final String DEFAULT_SECRET_KEY5 = "!QAZ2wsx#EDC4rfv%TGB6yhn&UJM8ik,(OL>0p;/";
-    public static final String DEFAULT_SECRET_KEY6 = "1qaz2wsx3edc4rfv5tgb^YHN&UJM*IK<(OL>)P:?";
     public static final String DEFAULT_SECRET_KEY = DEFAULT_SECRET_KEY1;
 
     public static final String DES = "DES";
 
-    public static final Base32 base32 = new Base32();
+    public static final Base32 BASE_32 = new Base32();
 
     static {
         DEFAULT_KEY = obtainKey(DEFAULT_SECRET_KEY);
@@ -73,7 +71,7 @@ public class Base64Utils {
      * String明文输入,String密文输出
      */
     public static String encode32(String key, String str) {
-        return base32.encodeAsString(obtainEncode(key, str.getBytes())).replaceAll("=", "");
+        return BASE_32.encodeAsString(obtainEncode(key, str.getBytes())).replaceAll("=", "");
     }
 
     /**
@@ -105,7 +103,7 @@ public class Base64Utils {
      * 以String密文输入,String明文输出
      */
     public static String decode32(String key, String str) {
-        return new String(obtainDecode(key, base32.decode(str)));
+        return new String(obtainDecode(key, BASE_32.decode(str)));
     }
 
     /**
@@ -161,8 +159,4 @@ public class Base64Utils {
         return byteFina;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Base64Utils.encode("超级管理员"));
-        System.out.println(Base64Utils.decode("5KyZLCeOwHQ"));
-    }
 }

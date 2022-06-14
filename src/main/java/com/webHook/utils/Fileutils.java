@@ -22,6 +22,7 @@ import java.util.logging.Logger;
  * 3.发送请求
  * 4.以输入流的形式获取返回内容
  * 5.关闭输入流
+ * @author mzx
  */
 public class Fileutils {
 

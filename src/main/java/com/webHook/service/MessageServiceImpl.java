@@ -7,12 +7,12 @@ import com.webHook.entity.WebHookMessage;
 import com.webHook.enums.ErrorMessageEnum;
 import com.webHook.utils.HttpClientUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author mzx
@@ -27,9 +27,9 @@ public class MessageServiceImpl implements MessageService {
     private List<String> webHookList;
 
 
-    public MessageServiceImpl(MessageSenderProperties messagesenderProperties) {
+    public MessageServiceImpl(@Qualifier("messageSenderProperties") MessageSenderProperties messagesenderProperties) {
         this.webHookList = messagesenderProperties.getWebHookList();
-        if (webHookList == null || webHookList.size() == 0) {
+        if (CollectionUtils.isEmpty(webHookList)) {
             throw new RuntimeException(ErrorMessageEnum.NO_GET_WEB_HOOK_LOCATION.getMsg());
         }
     }
