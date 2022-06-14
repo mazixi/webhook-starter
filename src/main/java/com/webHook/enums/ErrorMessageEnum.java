@@ -3,7 +3,7 @@ package com.webHook.enums;
 import lombok.Getter;
 
 /**
- * 现券业务响应code
+ * ErrorMessageEnum 业务报错信息
  *
  * @Author mzx
  * @since 2022-06-09 20:05

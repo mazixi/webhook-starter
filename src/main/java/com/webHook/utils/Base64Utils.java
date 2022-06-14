@@ -23,7 +23,7 @@ public class Base64Utils {
 
     public static final String DES = "DES";
 
-    public static final Base32 base32 = new Base32();
+    public static final Base32 BASE_32 = new Base32();
 
     static {
         DEFAULT_KEY = obtainKey(DEFAULT_SECRET_KEY);
@@ -71,7 +71,7 @@ public class Base64Utils {
      * String明文输入,String密文输出
      */
     public static String encode32(String key, String str) {
-        return base32.encodeAsString(obtainEncode(key, str.getBytes())).replaceAll("=", "");
+        return BASE_32.encodeAsString(obtainEncode(key, str.getBytes())).replaceAll("=", "");
     }
 
     /**
@@ -103,7 +103,7 @@ public class Base64Utils {
      * 以String密文输入,String明文输出
      */
     public static String decode32(String key, String str) {
-        return new String(obtainDecode(key, base32.decode(str)));
+        return new String(obtainDecode(key, BASE_32.decode(str)));
     }
 
     /**
