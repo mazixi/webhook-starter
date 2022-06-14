@@ -212,7 +212,7 @@ public class HttpClientUtil {
     private static HttpRequestBase addHeaders(HttpRequestBase httpRequest, Map<String, String> headers) {
         // 设置请求头信息，鉴权
 //        httpRequest.setHeader("Authorization", "Bearer da3efcbf-0845-4fe3-8aba-ee040be542c0");
-        httpRequest.addHeader("Authorization", "123");
+        httpRequest.addHeader("Authorization", "1655177766");
         for (Map.Entry<String, String> entry : headers.entrySet()) {
             httpRequest.addHeader(entry.getKey(), entry.getValue());
         }
