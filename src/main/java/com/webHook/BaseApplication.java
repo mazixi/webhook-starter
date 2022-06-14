@@ -17,12 +17,6 @@ public class BaseApplication {
 
 		SpringApplication.run(com.webHook.BaseApplication.class, args);
 
-
-		System.out.println("----------------------------------------------");
-		System.out.println("|                                            |");
-		System.out.println("|         webHook started success         	|");
-		System.out.println("|                                            |");
-		System.out.println("----------------------------------------------");
 	}
 
 }
