@@ -17,6 +17,6 @@ public class Article {
 
     private String url;
 
-    private String picUrl;
+    private String picurl;
 
 }

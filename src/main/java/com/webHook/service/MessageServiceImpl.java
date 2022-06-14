@@ -1,5 +1,6 @@
 package com.webHook.service;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.webHook.config.MessageSenderProperties;
 import com.webHook.entity.WebHookMessage;
@@ -35,6 +36,7 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public boolean send(WebHookMessage webHookMessage) {
+        log.info("webHookList:{}", JSON.toJSONString(webHookList));
         return send(webHookMessage, webHookList.get(0));
     }
 
