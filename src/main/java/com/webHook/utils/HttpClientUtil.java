@@ -1,6 +1,9 @@
-package com.webhook.utils;
+package com.webHook.utils;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.StatusLine;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
@@ -22,11 +25,8 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
+@Slf4j
 @SuppressWarnings("all")
 public class HttpClientUtil {
 
@@ -184,21 +184,24 @@ public class HttpClientUtil {
             // 创建Http Post请求
             HttpPost httpPost = new HttpPost(url);
             // 添加header
-
             httpPost = (HttpPost) addHeaders(httpPost, headers);
             // 创建请求内容
+            log.info("json:{}",json);
             StringEntity entity = new StringEntity(json, ContentType.APPLICATION_JSON);
             httpPost.setEntity(entity);
             // 执行http请求
             response = httpClient.execute(httpPost);
-            resultString = EntityUtils.toString(response.getEntity(), "utf-8");
+            StatusLine status = response.getStatusLine();
+            int state = status.getStatusCode();
+            if (state == HttpStatus.SC_OK) {
+                resultString = EntityUtils.toString(response.getEntity(), "utf-8");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
                 response.close();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -209,7 +212,7 @@ public class HttpClientUtil {
     private static HttpRequestBase addHeaders(HttpRequestBase httpRequest, Map<String, String> headers) {
         // 设置请求头信息，鉴权
 //        httpRequest.setHeader("Authorization", "Bearer da3efcbf-0845-4fe3-8aba-ee040be542c0");
-        httpRequest.addHeader("Authorization", "1231321321313132132");
+        httpRequest.addHeader("Authorization", "123");
         for (Map.Entry<String, String> entry : headers.entrySet()) {
             httpRequest.addHeader(entry.getKey(), entry.getValue());
         }

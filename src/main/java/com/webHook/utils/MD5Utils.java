@@ -1,4 +1,4 @@
-package com.webhook.utils;
+package com.webHook.utils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 
 /**
- * @author mazixi
+ * @author mzx
  */
 public class MD5Utils {
     /**

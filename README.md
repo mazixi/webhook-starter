@@ -13,7 +13,7 @@
 #### 1.添加maven依赖(import maven dependency)
 ```maven
         <dependency>
-            <groupId>com.webhook</groupId>
+            <groupId>com.webHook</groupId>
             <artifactId>webhook-starter</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -23,7 +23,7 @@
 ```yml
 spring:
   message:
-    wechat-webhooks: 
+    webHookList: 
     	- https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx
     	- https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx
 
@@ -36,7 +36,7 @@ spring:
 
 - 1.发送普通文本消息
 ```java
-        WebHookMessage webHookMessage = WebHookMessage.buildText("hello");
+        WebHookMessage webHookMessage = WebHookMessage.buildText("这是一个文本信息");
         messageService.send(webHookMessage);
 ```
 - 2.发送图片消息
@@ -56,7 +56,7 @@ spring:
                 .setTitle("这是卡片的标题")
                 .setUrl("http://www.google.com/这是点击的链接地址")
                 .setPicUrl(networkImageUrl)
-                .setDescription("这是秒速文字");
+                .setDescription("这是描述文字");
         WebHookMessage articleMessage =
                 WebHookMessage.buildNewsMessage(article);
         messageService.send(articleMessage);

@@ -1,4 +1,4 @@
-package com.webhook.config;
+package com.webHook.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -22,7 +22,7 @@ public class MessageSenderProperties {
     private boolean enable = true;
 
     /**
-     * wechet-webhookList
+     * webHookList
      */
     private List<String> webHookList;
 

@@ -1,4 +1,4 @@
-package com.webhook.utils;
+package com.webHook.utils;
 
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base32;
