@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 /**
- * @author mazixi
+ * @author mzx
  */
 public class Base64Utils {
 
