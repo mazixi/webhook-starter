@@ -1,7 +1,7 @@
-package com.webhook.entity;
+package com.webHook.entity;
 
 
-import com.webhook.utils.*;
+import com.webHook.utils.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author mazixi
+ * @author mzx
  * @since 2022-06-09 19:58
  */
 @Data
@@ -19,11 +19,11 @@ public class WebHookMessage {
 
     private String webHook;
 
-    private String msgType;
+    private String msgtype;
 
     private Text text;
 
-    private Markdown markDown;
+    private Markdown markdown;
 
     private Image image;
 
@@ -66,7 +66,7 @@ public class WebHookMessage {
         File file;
         try {
             WebHookMessage message = new WebHookMessage();
-            message.setMsgType("image");
+            message.setMsgtype("image");
             WebHookMessage.Image image = new WebHookMessage.Image();
             if (imagePath.startsWith("http")) {
                 file = Fileutils.downloadFile(imagePath, "image", IDUtils.genRandom("image-", 15));
@@ -95,10 +95,10 @@ public class WebHookMessage {
     */
     public static WebHookMessage buildMarkDownMessage(MarkdownBuffer content) {
         WebHookMessage message = new WebHookMessage();
-        message.setMsgType("markdown");
+        message.setMsgtype("markdown");
         WebHookMessage.Markdown markdown = new WebHookMessage.Markdown();
         markdown.setContent(content.toString());
-        message.setMarkDown(markdown);
+        message.setMarkdown(markdown);
         return message;
     }
 
@@ -110,7 +110,7 @@ public class WebHookMessage {
     */
     public static WebHookMessage buildNewsMessage(List<Article> articles) {
         WebHookMessage message = new WebHookMessage();
-        message.setMsgType("news");
+        message.setMsgtype("news");
         WebHookMessage.News news = new WebHookMessage.News();
         news.setArticles(articles);
         message.setNews(news);
@@ -124,7 +124,7 @@ public class WebHookMessage {
      */
     public static WebHookMessage buildNewsMessage(Article article) {
         WebHookMessage message = new WebHookMessage();
-        message.setMsgType("news");
+        message.setMsgtype("news");
         WebHookMessage.News news = new WebHookMessage.News();
         List<Article> list = new ArrayList();
         list.add(article);
@@ -145,12 +145,12 @@ public class WebHookMessage {
 
     /**
      *  @author mzx
-     *  @type   构建普通文本消息（@ALL 指定webhookapi)
+     *  @type   构建普通文本消息（@ALL 指定webHookApi)
      *  @desc
      */
     public static WebHookMessage buildText(String content, boolean atAll) {
         WebHookMessage message = new WebHookMessage();
-        message.setMsgType("text");
+        message.setMsgtype("text");
         WebHookMessage.Text text = new WebHookMessage.Text();
         text.setContent(content);
         List<String> mentionedList = text.getMentionedList();

@@ -1,4 +1,4 @@
-package com.webhook.utils;
+package com.webHook.utils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -7,7 +7,7 @@ import java.util.Base64;
 import java.util.Objects;
 
 /**
- * @author mazixi
+ * @author mzx
  */
 public class ImageToBase64 {
 

@@ -1,10 +1,10 @@
-package com.webhook.entity;
+package com.webHook.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 /**
- * @author mazixi
+ * @author mzx
  * @since 2022-06-09 19:58
  */
 @Data
@@ -17,6 +17,6 @@ public class Article {
 
     private String url;
 
-    private String picUrl;
+    private String picurl;
 
 }
