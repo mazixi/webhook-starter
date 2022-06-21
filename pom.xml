@@ -58,14 +58,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.5</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -79,57 +77,48 @@
     </dependencies>
 
     <licenses>
-        <!-- Apache许可证 -->
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
         </license>
-
     </licenses>
+
+    <scm>
+        <url>https://github.com/mazixi/webhook-starter</url>
+        <connection>https://github.com/mazixi/webhook-starter.git</connection>
+        <developerConnection>https://github.com/mazixi/webhook-starter</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>mazixi</name>
+            <email>qiexingqieyin@163.com</email>
+            <url>https://github.com/mazixi/webhook-starter</url>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
 
     <repositories>
-        <repository>
-            <id>maven-snapshots</id>
-            <name>maven-snapshots</name>
-            <url>https://nexus.qtrade.com.cn/nexus/repository/maven-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
 
-        <!-- 配置私服仓库 -->
-        <repository>
-            <id>qtrade-repo</id>
-            <name>qtrade-repo</name>
-            <url>https://nexus.qtrade.com.cn/nexus/repository/qtrade-repo/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </releases>
-        </repository>
-
-        <!-- 私服release仓库 -->
-        <repository>
-            <id>maven-releases</id>
-            <name>maven-releases</name>
-            <url>https://nexus.qtrade.com.cn/nexus/repository/maven-releases/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </releases>
-        </repository>
     </repositories>
     <build>
         <plugins>
-            <plugin>
+        <!--    <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
@@ -163,6 +152,74 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
+
+            <!-- 发布Jar到Maven仓库 Begin -->
+            <!--生成Source jar文件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--生成Javadoc，关闭doclint,避免注解检查不通过-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--Maven GPG插件用于使用以下配置对组件进行签名-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--Nexus Staging Maven插件是将组件部署到OSSRH并将其发布到Central Repository的推荐方法-->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <!-- release plugin,用于发布到release仓库部署插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+            <!-- 发布Jar到Maven仓库 End -->
+
         </plugins>
     </build>
 </project>
