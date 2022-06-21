@@ -7,12 +7,8 @@ import java.util.Random;
 import java.util.UUID;
 
 /**
- * Copyright @2019 sayalala.com.
- *
- * @author: 黄磊
- * date:  2019/9/2  14:08
+ * @author: mzx
  * use to：ID生成工具类
- * modify：
  */
 public class IDUtils {
 
