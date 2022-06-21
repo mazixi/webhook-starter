@@ -106,19 +106,18 @@
     </distributionManagement>
 
 
-
     <repositories>
 
     </repositories>
     <build>
         <plugins>
-        <!--    <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>-->
+            <!--    <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>-->
 
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
