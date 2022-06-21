@@ -42,7 +42,7 @@ public class MessageTest {
     }
 
     /**
-     * 图文卡片
+     * 图文/卡片
      */
     @Test
     public void sendMessageToWebHookGraphicCard() {

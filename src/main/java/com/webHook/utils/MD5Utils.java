@@ -24,7 +24,7 @@ public class MD5Utils {
         try {
             messagedigest = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException nsaex) {
-            System.err.println(MD5Utils.class.getName() + "初始化失败，MessageDigest不支持MD5Util。");
+            System.err.println(MD5Utils.class.getName() + "init失败，MessageDigest不支持MD5Util。");
             nsaex.printStackTrace();
         }
     }
@@ -122,7 +122,7 @@ public class MD5Utils {
     public static void main(String[] args) throws IOException {
         long begin = System.currentTimeMillis();
 
-        File file = new File("D:/BaiduNetdiskDownload/01_SpringBoot全套视频教程2018年3月份录制2.0.x版本/01-SpringBoot简介.avi");
+        File file = new File("D:/xx.avi");
         if (!file.exists()) {
             System.out.println("不存在");
         }
