@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.webhook</groupId>
+    <groupId>io.github.mazixi</groupId>
     <artifactId>webhook-starter</artifactId>
     <version>1.0.0</version>
 
