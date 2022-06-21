@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.webhook</groupId>
+    <groupId>io.github.mazixi</groupId>
     <artifactId>webhook-starter</artifactId>
     <version>1.0.0</version>
 
@@ -106,19 +106,18 @@
     </distributionManagement>
 
 
-
     <repositories>
 
     </repositories>
     <build>
         <plugins>
-        <!--    <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>-->
+            <!--    <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>-->
 
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
